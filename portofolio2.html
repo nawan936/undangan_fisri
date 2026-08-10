@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #03000a;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        .neon-text-pink {
+            text-shadow: 0 0 10px rgba(236, 72, 153, 0.7), 0 0 20px rgba(236, 72, 153, 0.4);
+        }
+        .neon-text-blue {
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.7), 0 0 20px rgba(6, 182, 212, 0.4);
+        }
+        .neon-border-pink {
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+        }
+        .neon-border-blue {
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+        }
+        .glow-bg {
+            background: radial-gradient(circle at center, rgba(147, 51, 234, 0.15) 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <div class="absolute top-10 left-5 w-24 h-24 border-l-2 border-t-2 border-pink-500 opacity-40 hidden md:block"></div>
+    <div class="absolute bottom-10 left-5 w-24 h-24 border-l-2 border-b-2 border-pink-500 opacity-40 hidden md:block"></div>
+
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center relative z-10">
+        <div class="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
+            Sinetan
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm tracking-widest text-gray-400">
+            <a href="#" class="hover:text-pink-500 transition">FEATURES</a>
+            <a href="#" class="hover:text-pink-500 transition">PORTFOLIO</a>
+            <a href="#" class="hover:text-pink-500 transition">GAMING</a>
+            <a href="#" class="hover:text-pink-500 transition">DIGITAL GOODS</a>
+        </div>
+        <div class="flex space-x-4 items-center">
+            <a href="#" class="text-xs tracking-wider text-gray-400 hover:text-white hidden sm:block">SIGN IN</a>
+            <a href="#" class="bg-gradient-to-r from-pink-500 to-purple-600 px-5 py-2 rounded-full text-xs font-semibold tracking-wider hover:opacity-90 transition shadow-lg neon-border-pink">
+                GET STARTED
+            </a>
+        </div>
+    </nav>
+
+    <header class="max-w-7xl mx-auto px-6 pt-16 pb-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10 glow-bg">
+        <div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                Cybernetic, Stepping <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400">
+                    Creative Future
+                </span>
+            </h1>
+            <p class="text-gray-400 mt-6 max-w-lg text-sm md:text-base leading-relaxed">
+                Explore your ecosystem with digital customized solutions. Dynamic soundscapes, integrated smart interfaces, and visual arts combined into one tech solution.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+                <button class="bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-3 rounded-md font-semibold text-sm tracking-wide shadow-lg hover:opacity-90 transition">
+                    EXPLORE NOW
+                </button>
+                <button class="border border-cyan-500 text-cyan-400 px-6 py-3 rounded-md font-semibold text-sm tracking-wide hover:bg-cyan-500/10 transition">
+                    DOCUMENTATION
+                </button>
+            </div>
+            <div class="flex space-x-2 mt-12">
+                <span class="w-2 h-2 rounded-full bg-gray-600"></span>
+                <span class="w-2 h-2 rounded-full bg-pink-500"></span>
+                <span class="w-2 h-2 rounded-full bg-gray-600"></span>
+                <span class="w-2 h-2 rounded-full bg-gray-600"></span>
+            </div>
+        </div>
+        
+        <div class="flex justify-center relative">
+            <div class="absolute inset-0 bg-cyan-500/10 blur-3xl rounded-full w-72 h-72 mx-auto my-auto"></div>
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80" 
+                 alt="Cyber Headphone" 
+                 class="w-4/5 object-contain rounded-3xl mix-blend-screen transform -rotate-12 filter drop-shadow-[0_0_30px_rgba(6,182,212,0.6)]">
+        </div>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+        <div class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold tracking-wide">
+                Lastly Experience. <br>
+                <span class="text-pink-500">Great Control.</span>
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-[#0b071e]/80 border border-purple-900/40 p-6 rounded-2xl hover:border-pink-500/50 transition duration-300">
+                <div class="h-48 mb-6 flex items-center justify-center rounded-xl bg-gradient-to-br from-pink-500/10 to-purple-500/10 border border-pink-500/20 relative overflow-hidden">
+                    <div class="w-20 h-20 rounded-full border-2 border-pink-500 flex items-center justify-center text-pink-500 font-bold text-xl neon-border-pink">
+                        PINK
+                    </div>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Stage Control</h3>
+                <p class="text-gray-400 text-xs leading-relaxed mb-4">Custom audio system and fully interactive layout for advanced configuration options.</p>
+                <a href="#" class="text-xs text-pink-500 font-semibold hover:underline tracking-wider">LEARN MORE &rarr;</a>
+            </div>
+
+            <div class="bg-[#0b071e]/80 border border-purple-900/40 p-6 rounded-2xl hover:border-cyan-500/50 transition duration-300">
+                <div class="h-48 mb-6 flex items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 relative overflow-hidden">
+                    <div class="w-24 h-24 rounded-full border-4 border-dashed border-cyan-400 animate-spin flex items-center justify-center opacity-80" style="animation-duration: 10s;"></div>
+                    <div class="absolute w-16 h-16 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xs font-bold">CORE</div>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Secure Locks</h3>
+                <p class="text-gray-400 text-xs leading-relaxed mb-4">High encryption database integration ensuring maximum digital asset protection.</p>
+                <a href="#" class="text-xs text-cyan-400 font-semibold hover:underline tracking-wider">LEARN MORE &rarr;</a>
+            </div>
+
+            <div class="bg-[#0b071e]/80 border border-purple-900/40 p-6 rounded-2xl hover:border-purple-500/50 transition duration-300">
+                <div class="h-48 mb-6 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=400&q=80" 
+                         alt="Cyber Character" class="w-full h-full object-cover opacity-70">
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Shadow Scope</h3>
+                <p class="text-gray-400 text-xs leading-relaxed mb-4">Immersive futuristic interface styling combined with fluid layout responsive logic.</p>
+                <a href="#" class="text-xs text-purple-400 font-semibold hover:underline tracking-wider">LEARN MORE &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+        <div class="order-2 md:order-1 flex justify-center">
+            <div class="relative p-1 bg-gradient-to-tr from-pink-500 via-purple-600 to-cyan-400 rounded-2xl shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=80" 
+                     alt="Neon Tech" class="rounded-2xl max-w-full h-64 md:h-80 object-cover">
+            </div>
+        </div>
+        <div class="order-1 md:order-2">
+            <h2 class="text-3xl font-bold tracking-wide leading-tight">
+                Quality Photonces <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500">
+                    & Digital Precision
+                </span>
+            </h2>
+            <p class="text-gray-400 text-sm mt-4 leading-relaxed">
+                We deliver high-end asset optimization, neat code structuring, and elegant UI components. Perfect for developers looking for a fast, reliable, and aesthetically unique boilerplate.
+            </p>
+            <div class="mt-6 flex space-x-4">
+                <button class="bg-pink-600 hover:bg-pink-700 px-5 py-2.5 rounded-lg text-xs font-semibold tracking-wider transition">
+                    CHALLENGE
+                </button>
+                <button class="text-xs tracking-wider border border-gray-700 text-gray-300 hover:text-white px-5 py-2.5 rounded-lg transition">
+                    LEARN DETAILS
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-purple-950/40 bg-[#020007] mt-20 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="text-center mb-10">
+                <h3 class="text-xl font-bold tracking-widest text-gray-300">Stning Device</h3>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-xs text-gray-500 text-center md:text-left">
+                <div>
+                    <h4 class="text-gray-300 font-semibold mb-3 tracking-wider">FRONTEND</h4>
+                    <p class="mb-2 hover:text-pink-500 cursor-pointer">Tailwind CSS</p>
+                    <p class="hover:text-pink-500 cursor-pointer">Components</p>
+                </div>
+                <div>
+                    <h4 class="text-gray-300 font-semibold mb-3 tracking-wider">PRODUCT</h4>
+                    <p class="mb-2 hover:text-pink-500 cursor-pointer">Cyber Themes</p>
+                    <p class="hover:text-pink-500 cursor-pointer">Custom UI</p>
+                </div>
+                <div>
+                    <h4 class="text-gray-300 font-semibold mb-3 tracking-wider">PLATFORM</h4>
+                    <p class="mb-2 hover:text-pink-500 cursor-pointer">Wokwi Simulator</p>
+                    <p class="hover:text-pink-500 cursor-pointer">Marketplace</p>
+                </div>
+                <div class="flex flex-wrap gap-3 justify-center md:justify-start items-center text-gray-400">
+                    <span class="p-2 bg-purple-950/30 border border-purple-800/30 rounded-md">❖</span>
+                    <span class="p-2 bg-purple-950/30 border border-purple-800/30 rounded-md">⬢</span>
+                    <span class="p-2 bg-purple-950/30 border border-purple-800/30 rounded-md">▲</span>
+                    <span class="p-2 bg-purple-950/30 border border-purple-800/30 rounded-md">✖</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center border-t border-purple-950/60 mt-10 pt-6 text-[10px] text-gray-600 tracking-wider">
+                <p>&copy; 2026 Sinetan Cyber Studio. All Rights Reserved.</p>
+                <p>Designed for Cyber Enthusiasts</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

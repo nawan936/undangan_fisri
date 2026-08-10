@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Web3 Modern</title>
+    <!-- Menggunakan Font Teknis & Modern dari Google Fonts (Figma Reference) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- FIGMA DESIGN TOKENS (VARIABLES) --- */
+        :root {
+            --bg-main: #0B0E14;
+            --bg-card: rgba(20, 26, 38, 0.6);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --primary-glow: #00ffcc;
+            --secondary-glow: #7000ff;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --radius-md: 12px;
+            --radius-lg: 24px;
+        }
+
+        /* --- BASE STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Dekorasi Background Web3 (Glow Orbs) */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(120px);
+            opacity: 0.4;
+        }
+        body::before {
+            top: 10%;
+            left: -50px;
+            background: var(--primary-glow);
+        }
+        body::after {
+            top: 60%;
+            right: -50px;
+            background: var(--secondary-glow);
+        }
+
+        /* --- FIGMA COMPONENT: NAVIGATION BAR --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 8%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 14, 20, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, var(--primary-glow), #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-glow);
+        }
+
+        /* FIGMA COMPONENT: Connect Wallet Button Concept */
+        .btn-connect {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--primary-glow);
+            color: var(--primary-glow);
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            font-family: var(--font-display);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.1);
+        }
+
+        .btn-connect:hover {
+            background: var(--primary-glow);
+            color: var(--bg-main);
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
+        }
+
+        /* --- LAYOUT CONFIGURATION --- */
+        section {
+            padding: 140px 8% 80px 8%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin-bottom: 48px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary-glow);
+        }
+
+        /* --- SECTION 1: HERO CONTAINER --- */
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            background: rgba(0, 255, 204, 0.1);
+            border: 1px solid rgba(0, 255, 204, 0.2);
+            color: var(--primary-glow);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 24px;
+            font-family: var(--font-display);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--primary-glow) 0%, var(--secondary-glow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 540px;
+        }
+
+        /* FIGMA COMPONENT: Decorative Web3 Grid Visual */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .web3-sphere {
+            width: 280px;
+            height: 280px;
+            border: 2px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: rotate 20s linear infinite;
+        }
+
+        .web3-core {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, rgba(0,255,204,0.2) 0%, rgba(112,0,255,0.2) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            box-shadow: 0 0 40px rgba(112, 0, 255, 0.3);
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- SECTION 2: PROJECTS (GRID CARDS) --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        /* FIGMA COMPONENT: Glassmorphism Card Element */
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%);
+            z-index: 1;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 255, 204, 0.3);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 255, 204, 0.05);
+        }
+
+        .project-tag {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .project-name {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .project-link {
+            color: var(--primary-glow);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- SECTION 3: CONNECT / CONTACT --- */
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(20,26,38,0.4) 0%, rgba(11,14,20,0) 100%);
+            border: 1px solid var(--border-color);
+            padding: 48px;
+            border-radius: var(--radius-lg);
+        }
+
+        .contact-desc {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        /* FIGMA COMPONENT: Input Field & Buttons */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            padding: 14px 18px;
+            border-radius: var(--radius-md);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--secondary-glow);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 0 15px rgba(112, 0, 255, 0.15);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
+            border: none;
+            color: #ffffff;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            opacity: 0.9;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            .hero-visual {
+                margin-top: 40px;
+            }
+            .nav-links {
+                display: none; /* Simplifikasi mobile view */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV COMPONENT -->
+    <nav class="navbar">
+        <div class="nav-logo">// DEV.PORTFOLIO</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="btn-connect">Connect Identity</button>
+    </nav>
+
+    <!-- SECTION 1: HERO -->
+    <section id="home">
+        <div class="hero-container">
+            <div class="hero-text">
+                <span class="hero-badge">Web3 Ready Portfolio</span>
+                <h1 class="hero-title">Building <span>Digital Systems</span> for the Next Generation.</h1>
+                <p class="hero-desc">Saya seorang pengembang perangkat lunak dan mahasiswa Teknologi Informasi. Berfokus pada arsitektur kode yang bersih, pengembangan sistem aplikasi cerdas, serta eksplorasi teknologi masa depan.</p>
+            </div>
+            <div class="hero-visual">
+                <div class="web3-sphere">
+                    <div class="web3-core"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: PROJECTS -->
+    <section id="projects">
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="project-grid">
+            
+            <!-- Card 1 -->
+            <div class="project-card">
+                <span class="project-tag">Microcontroller & Simulation</span>
+                <h3 class="project-name">Smart Safe Security System</h3>
+                <p class="project-desc">Prototipe brankas digital berbasis IoT menggunakan mikrokontroler dengan integrasi Keypad fisik, Servo mekanis, dan logika enkripsi akses yang disimulasikan secara presisi.</p>
+                <a href="#" class="project-link">View Specification ↗</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="project-card">
+                <span class="project-tag">Web Application</span>
+                <h3 class="project-name">Fire Department Info System</h3>
+                <p class="project-desc">Sistem manajemen informasi tanggap darurat kebakaran berbasis web yang dirancang untuk mempercepat alur data posko, pemetaan logistik, dan manajemen hak akses pengguna.</p>
+                <a href="#" class="project-link">View Repository ↗</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="project-card">
+                <span class="project-tag">Desktop Development</span>
+                <h3 class="project-name">Student Tuition Management</h3>
+                <p class="project-desc">Arsitektur aplikasi desktop berbasis Java objek yang dirancang khusus untuk mengelola rekapitulasi pelaporan, transaksi keuangan, dan administrasi biaya kuliah.</p>
+                <a href="#" class="project-link">View Documentation ↗</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 3: CONTACT / CONNECT -->
+    <section id="contact">
+        <div class="contact-container">
+            <span class="hero-badge" style="margin-bottom: 16px;">Secure Line</span>
+            <h2 class="section-title" style="font-size: 2rem; margin-bottom: 16px; display: block;">Get in Touch</h2>
+            <p class="contact-desc">Ada proyek besar atau kolaborasi sistem yang ingin didiskusikan? Kirimkan pesan terenkripsi Anda di bawah ini.</p>
+            
+            <form action="#" onsubmit="event.preventDefault(); alert('Identity Submitted! (Simulasi)');">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="Nama Anda / Perusahaan" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder="Alamat Email Kontak" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="Subjek Pesan" required>
+                </div>
+                <button type="submit" class="btn-submit">Kirim Pesan via Protokol</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Developer Portfolio. Dibuat dengan presisi token Figma dan estetika Web3.</p>
+    </footer>
+
+</body>
+</html>
